@@ -1,0 +1,1305 @@
+html {
+  overflow-x: hidden;
+  width: 100vw;
+  font-family: 'Proxima Nova', Georgia, sans-serif !important;
+}
+
+html .fade:not(.show) {
+  opacity: 1 !important;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
+h1 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: #343434;
+}
+
+h2 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+}
+
+h3 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+h4 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 20px !important;
+  font-weight: 400;
+}
+
+h5 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+h6 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+p {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #c3c3c3 !important;
+}
+
+.App {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F2F5F7;
+}
+
+.App .success-btn {
+  background-color: #50CB83 !important;
+  border-radius: 5px !important;
+}
+
+.App .danger-btn {
+  background-color: #FC5A1D !important;
+  border-radius: 5px !important;
+}
+
+.App Input {
+  border-radius: 2px !important;
+}
+
+.App Button {
+  border-radius: 2px !important;
+}
+
+.App .main-layout-desktop {
+  height: 100vh;
+}
+
+.App .main-layout-desktop .invite-img {
+  height: 200px;
+  cursor: pointer;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+}
+
+.App .login-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.App .login-page .login-container {
+  width: 100%;
+  height: 100%;
+}
+
+.App .login-page .login-container .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 60px 20px 30px 20px;
+}
+
+.App .login-page .login-container .container .logo-container {
+  padding-bottom: 30px;
+}
+
+.App .login-page .login-container .container .logo-container .logo {
+  height: 30px;
+}
+
+.App .login-page .login-container .container .header-container h3 {
+  font-weight: 600 !important;
+  text-align: center;
+}
+
+.App .login-page .login-container .container .header-container h6 {
+  text-align: center;
+}
+
+.App .login-page .login-container .container .form-container {
+  padding: 20px 0px 0px 0px;
+}
+
+.App .login-page .login-container .container .form-container .input-container {
+  padding: 5px 0px 5px 0px;
+}
+
+.App .login-page .login-container .container .form-container .input-container Input {
+  width: 400px;
+  height: 50px;
+  font-size: 1.2rem !important;
+}
+
+.App .login-page .login-container .container .form-container .button-container {
+  padding: 15px 0px 15px 0px;
+}
+
+.App .login-page .login-container .container .form-container .forget-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0px 10p 0px;
+}
+
+.App .login-page .login-container .container .form-container .join-now {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .login-page .login-container .container .form-container .join-now .join-now-btn {
+  color: #0073b1 !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+
+.App .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.App .footer-container .footer-box {
+  border-top: 1px solid #c3c3c3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.App .footer-container .footer-box ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 20px;
+}
+
+.App .footer-container .footer-box ul li {
+  list-style: none;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.App .footer-container .footer-box ul li:hover {
+  color: #0073b1;
+}
+
+.App .footer-container .footer-box ul .footer-logo {
+  height: 20px;
+}
+
+.App .register-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.App .register-page .register-container .register-box {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .register-page .register-container .register-box h3 {
+  padding: 15px 0px 15px 0px;
+}
+
+.App .register-page .register-container .register-box .logo-container {
+  padding: 10px 0px 10px 10px;
+}
+
+.App .register-page .register-container .register-box .logo-container .reg-logo {
+  height: 40px;
+}
+
+.App .register-page .register-container .register-box .register-form {
+  height: 100%;
+  -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px;
+}
+
+.App .register-page .register-container .register-box .register-form .rs-btn.rs-btn-default.rs-picker-toggle {
+  border-radius: 2px !important;
+}
+
+.App .register-page .register-container .register-box .register-form .button-container {
+  padding: 15px 0px 15px 0px;
+}
+
+.App .custom-navbar-page {
+  padding-bottom: 60px;
+}
+
+.App .custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #0073b1;
+  height: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 170px 300px auto 500px auto;
+      grid-template-columns: auto 170px 300px auto 500px auto;
+  -ms-grid-rows: 60px;
+      grid-template-rows: 60px;
+}
+
+.App .custom-navbar .logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .custom-navbar .logo-container .logo {
+  height: 35px;
+  cursor: pointer;
+}
+
+.App .custom-navbar .search-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .custom-navbar .nav-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box .nav-item-title {
+  color: #c3c3c3;
+  font-weight: 500 !important;
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 13px;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box .nav-item-icon {
+  color: #c3c3c3;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box .avatar {
+  background-color: #F7F7F7;
+  color: #0073b1;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box .badge .rs-badge-independent, .App .custom-navbar .nav-item-container .nav-item-box .badge .rs-badge-content {
+  border: 2px solid #0073b1;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box-active .nav-item-icon {
+  color: #FFFFFF !important;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box-active .nav-item-title {
+  color: #FFFFFF;
+  font-weight: 500 !important;
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 13px;
+}
+
+.App .custom-navbar .nav-item-container .nav-item-box-active .badge .rs-badge-independent, .App .custom-navbar .nav-item-container .nav-item-box-active .badge .rs-badge-content {
+  border: 2px solid #0073b1;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.App .feed-page {
+  padding: 30px 0px 0px 0px;
+  background-color: #F2F5F7;
+  height: 100%;
+}
+
+.App .feed-page .invite-img {
+  height: 200px;
+  cursor: pointer;
+}
+
+.App .profile-card-box {
+  height: 220px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+}
+
+.App .profile-card-box .top-banner {
+  height: 70px;
+  background-color: #0073b1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.App .profile-card-box .avatar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.App .profile-card-box .avatar-container .avatar {
+  border: 3px solid #FFFFFF;
+}
+
+.App .profile-card-box .profile-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.App .profile-card-box .profile-info h5 {
+  font-weight: 500 !important;
+}
+
+.App .profile-card-box .profile-info h6 {
+  color: #c3c3c3 !important;
+}
+
+.App .newpost-card {
+  height: 130px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .newpost-card .rs-btn.rs-btn-icon.rs-btn-icon-with-text {
+  background-color: #FFFFFF !important;
+}
+
+.App .newpost-card .rs-icon.rs-icon {
+  background-color: #FFFFFF !important;
+}
+
+.App .start-post {
+  padding-bottom: 10px;
+}
+
+.App .start-post .button-container {
+  padding: 10px 20px 10px 20px;
+}
+
+.App .post-button-toolbar {
+  border-top: 1px solid #c3c3c3;
+  padding-top: 5px;
+}
+
+.App .post-button-toolbar .button-container-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.App .post-button-toolbar .button-container-toolbar #camera {
+  color: #7E30FF;
+}
+
+.App .post-button-toolbar .button-container-toolbar #frame {
+  color: #E530FF;
+}
+
+.App .post-button-toolbar .button-container-toolbar #more {
+  color: #FF7E30;
+}
+
+.App .invite-box {
+  height: 100%;
+  background-color: #FFFFFF;
+  padding: 20px 15px 20px 15px;
+  border-radius: 5px;
+}
+
+.App .invite-box .heading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .invite-box .heading-container .share-icon {
+  margin-top: -8px;
+}
+
+.App .invite-box .heading-container h4 {
+  padding-left: 10px;
+}
+
+.App .invite-box .invite-form .input-container {
+  padding: 5px 0px 5px 0px;
+}
+
+.App .invite-box .invite-form .input-container .input-error {
+  border: 1px solid #FC5A1D !important;
+}
+
+.App .invite-box .invite-form .input-container .input-success {
+  border: 1px solid #5ACC6C !important;
+}
+
+.App .invite-box .invite-form .input-container .helper {
+  color: #FC5A1D !important;
+}
+
+.App .invite-box .invite-form .input-container div {
+  margin: 8px 0px 8px 0px;
+}
+
+.App .invite-box .invite-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 50px;
+      grid-template-columns: auto 50px;
+}
+
+.App .invite-box .invite-row .delete-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .fr-desktop {
+  height: 100vh;
+  background-color: #F2F5F7;
+}
+
+.App .fr-desktop .container {
+  padding: 20px;
+  height: 100vh;
+  background-color: #FFFFFF !important;
+}
+
+.App .fr-desktop .container .heading-container {
+  padding: 15px 0px;
+}
+
+.App .fr-desktop .container .fr-box {
+  display: -ms-grid;
+  display: grid;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.2fr  0.4fr 0.4fr;
+      grid-template-columns: 0.2fr  0.4fr 0.4fr;
+  row-gap: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F2F5F7;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .avatar-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .avatar-box img {
+  height: 100px;
+  border-radius: 5px;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .info-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .info-box h3 {
+  color: #343434 !important;
+  text-transform: capitalize;
+  font-weight: 400 !important;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .info-box p {
+  font-size: 16px !important;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .fr-btn-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+}
+
+.App .fr-desktop .container .fr-box .fr-item-box .fr-btn-box div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .global-search-box {
+  background-color: white;
+  z-index: 999 !important;
+  position: absolute;
+  top: 50px;
+  width: 300px;
+  border-radius: 3px;
+  padding: 15px;
+  -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+}
+
+.App .global-search-box .global-search-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+.App .global-search-box .global-search-item h4 {
+  text-transform: capitalize !important;
+  padding-left: 10px;
+}
+
+.App .global-search-box .global-search-item img {
+  height: 30px;
+  border-radius: 5px;
+}
+
+.App .search-page-desktop {
+  height: 100vh;
+  background-color: #F2F5F7;
+}
+
+.App .search-page-desktop .container {
+  padding: 30px;
+  background-color: #FFFFFF;
+  height: 100vh;
+}
+
+.App .search-page-desktop .container .search-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.2fr 0.3fr 0.5fr;
+      grid-template-columns: 0.2fr 0.3fr 0.5fr;
+  margin-bottom: 15px;
+}
+
+.App .search-page-desktop .container .search-container .profile-pic-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App .search-page-desktop .container .search-container .profile-pic-box img {
+  height: 60px;
+  border-radius: 5px;
+}
+
+.App .search-page-desktop .container .search-container .user-info-box {
+  padding: 0px 10px;
+}
+
+.App .search-page-desktop .container .search-container .user-info-box h4 {
+  text-transform: capitalize;
+}
+
+.App .search-page-desktop .container .search-container .user-info-box p {
+  cursor: pointer;
+}
+
+.App .search-page-desktop .container .search-container .btn-box {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.App .error {
+  color: #FC5A1D !important;
+  font-weight: 700 !important;
+  padding-left: 5px;
+}
+
+.rs-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.show-info-desktop {
+  margin-top: 20px;
+}
+
+.show-info-desktop .show-info-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.3fr 0.5fr;
+      grid-template-columns: 0.3fr 0.5fr;
+  margin-bottom: 15px;
+}
+
+.show-info-desktop .show-info-box .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show-info-desktop .show-info-box .box:nth-child(1) img {
+  height: 65px !important;
+  border-radius: 5px;
+}
+
+.show-info-desktop .show-info-box .box:nth-child(2) h3 {
+  font-weight: 300 !important;
+  font-size: 18px !important;
+  text-transform: capitalize !important;
+}
+
+@media screen and (max-width: 800px) {
+  .App {
+    background-color: #F2F5F7;
+  }
+  .App .register-page .register-container .register-box h3 {
+    text-align: center;
+  }
+  .App .register-page .register-container .register-box .register-form {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 10px;
+  }
+  .App .login-page .login-container .container {
+    display: -ms-grid;
+    display: grid;
+  }
+  .App .login-page .login-container .container .logo-container {
+    text-align: center;
+  }
+  .App .login-page .login-container .container .form-container .input-container input {
+    width: 100%;
+  }
+  .App .feed-page .invite-img {
+    height: 100px;
+  }
+  .App .newpost-card {
+    height: 130px;
+  }
+  .App .newpost-card .post-button-toolbar .button-container-toolbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .App .footer-tab-container {
+    position: fixed;
+    height: 60px;
+    background-color: #FFFFFF;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: 60px;
+        grid-template-rows: 60px;
+  }
+  .App .footer-tab-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .footer-tab-container div .icon {
+    color: #CBCBCB !important;
+  }
+  .App .footer-tab-container div .icon-active {
+    color: #0073b1 !important;
+  }
+  .App .header-tab-container {
+    position: fixed;
+    height: 60px;
+    background-color: #0073b1;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px auto 50px;
+        grid-template-columns: 50px auto 50px;
+    -ms-grid-rows: 60px;
+        grid-template-rows: 60px;
+    z-index: 999;
+  }
+  .App .header-tab-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .header-tab-container div .avatar {
+    background-color: #D0EEFF;
+    color: #0073b1;
+  }
+  .App .header-tab-container div .icon {
+    color: #FFFFFF;
+  }
+}
+
+.profile-page-desktop .container {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.stats-page {
+  margin-top: 1.5rem;
+}
+
+.stats-page .stats-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  grid-auto-rows: 120px;
+  row-gap: 10px;
+  grid-area: 'name' 'name' 'name';
+}
+
+.stats-page .stats-box .stat-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 15px 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stats-page .stats-box .stat-box h2 {
+  font-size: 40px !important;
+}
+
+.stats-page .stats-box .stat-box p {
+  font-size: 16px !important;
+  color: #0073b1 !important;
+}
+
+.stats-page .stats-box .stat-box:nth-child(3) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+.banner-desktop {
+  position: relative;
+}
+
+.banner-desktop .banner-photo-box {
+  height: 315px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.banner-desktop .banner-photo-box img {
+  height: inherit;
+  width: inherit;
+}
+
+.banner-desktop .banner-photo-box .coverBorder {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(71%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.53)));
+  background: linear-gradient(rgba(0, 0, 0, 0) 71%, rgba(0, 0, 0, 0.53));
+}
+
+.banner-desktop .avatar-box {
+  position: absolute;
+  top: 145px;
+  left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner-desktop .avatar-box .profile-pic-box {
+  padding-right: 30px;
+}
+
+.banner-desktop .avatar-box .info-box {
+  width: 100%;
+}
+
+.banner-desktop .avatar-box .info-box h3 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  text-transform: capitalize !important;
+}
+
+.banner-desktop .avatar-box .info-box .placeholder {
+  width: 200px;
+}
+
+.banner-desktop .rs-avatar {
+  width: 150px !important;
+  height: 150px !important;
+  border: 4px solid #FFFFFF;
+  -webkit-box-shadow: inset 0 1.5px 3px 0 rgba(0, 0, 0, 0.1), 0 1.5px 3px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1.5px 3px 0 rgba(0, 0, 0, 0.1), 0 1.5px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.banner-desktop .rs-avatar > .rs-avatar-image {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+}
+
+.self-timeline-page .item-box {
+  background-color: #FFFFFF;
+  margin: 15px 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.self-timeline-page .item-box .top-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px auto 130px;
+      grid-template-columns: 50px auto 130px;
+}
+
+.self-timeline-page .item-box .top-box .avatar-box {
+  border-radius: 50%;
+}
+
+.self-timeline-page .item-box .top-box .avatar-box img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.self-timeline-page .item-box .top-box .heading-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.self-timeline-page .item-box .top-box .heading-box p {
+  font-size: 18px !important;
+  margin-bottom: 0.3rem;
+  color: #343434 !important;
+  font-weight: 500 !important;
+}
+
+.self-timeline-page .item-box .top-box .time-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.self-timeline-page .item-box .top-box .time-box p {
+  font-size: 14px !important;
+}
+
+.self-timeline-page .item-box .text-post-container {
+  padding: 10px 0px;
+}
+
+.self-timeline-page .item-box .text-post-container p {
+  font-size: 14px !important;
+  color: #343434 !important;
+  opacity: 0.8 !important;
+}
+
+.self-timeline-page .item-box .photo-container {
+  overflow: hidden;
+  height: 400px;
+}
+
+.self-timeline-page .item-box .photo-container img {
+  width: 100%;
+}
+
+.self-timeline-page .item-box .action-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  padding-top: 15px;
+}
+
+.self-timeline-page .like-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.self-timeline-page .like-container p {
+  color: #0073b1 !important;
+  cursor: pointer;
+}
+
+.rs-modal-body {
+  margin-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.rs-modal-body .start-post {
+  padding-bottom: 10px;
+}
+
+.rs-modal-body .start-post .button-container .rs-input {
+  border-radius: 2px !important;
+  font-size: 20px !important;
+}
+
+.rs-modal-body .start-post .button-container .rs-input-group-addon {
+  background-color: transparent !important;
+}
+
+.rs-modal-body .start-post .button-container .rs-input-group-addon .upload-photo {
+  height: 80px;
+  width: 80px;
+}
+
+.rs-modal-body .start-post .button-container img {
+  height: 80px;
+  width: 80px;
+}
+
+.rs-modal-body .post-button-toolbar {
+  border-top: 1px solid #EBEDF6;
+  padding-top: 15px;
+}
+
+.rs-modal-body .post-button-toolbar .button-container-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.rs-modal-body .post-button-toolbar .button-container-toolbar #camera {
+  color: #7E30FF;
+}
+
+.rs-modal-body .post-button-toolbar .button-container-toolbar #frame {
+  color: #E530FF;
+}
+
+.rs-modal-body .post-button-toolbar .button-container-toolbar #more {
+  color: #FF7E30;
+}
+
+.rs-modal-body .post-button-toolbar .button-container-toolbar .rs-btn.rs-btn-icon.rs-btn-icon-with-text {
+  background-color: #FFFFFF !important;
+}
+
+.rs-modal-body .post-button-toolbar .button-container-toolbar .rs-btn.rs-btn-icon.rs-btn-icon-with-text .rs-icon {
+  background-color: #FFFFFF !important;
+}
+
+.rs-modal-body .post-button-toolbar .rs-uploader-text .rs-uploader-file-item {
+  display: none !important;
+}
+/*# sourceMappingURL=App.css.map */

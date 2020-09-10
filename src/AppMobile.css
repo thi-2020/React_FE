@@ -1,0 +1,462 @@
+html {
+  overflow-x: hidden;
+  width: 100vw;
+  font-family: 'Proxima Nova', Georgia, sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+html .fade:not(.show) {
+  opacity: 1 !important;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
+h1 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+}
+
+h2 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+}
+
+h3 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+h4 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 20px !important;
+  font-weight: 400;
+}
+
+h5 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+h6 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+p {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #c3c3c3 !important;
+}
+
+Input {
+  border-radius: 2px !important;
+}
+
+Button {
+  border-radius: 2px !important;
+}
+
+.App-Mobile {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100vw;
+  background-color: #F2F5F7;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 800px) {
+  .App-Mobile .register-page .register-container .register-box h3 {
+    text-align: center;
+  }
+  .App-Mobile .register-page .register-container .register-box .register-form {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 10px;
+  }
+  .App-Mobile .login-page .login-container .container {
+    display: -ms-grid;
+    display: grid;
+  }
+  .App-Mobile .login-page .login-container .container .logo-container {
+    text-align: center;
+  }
+  .App-Mobile .login-page .login-container .container .form-container .input-container input {
+    width: 100%;
+  }
+  .App-Mobile .footer-tab-container {
+    position: fixed;
+    height: 60px;
+    background-color: #FFFFFF;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: 60px;
+        grid-template-rows: 60px;
+  }
+  .App-Mobile .footer-tab-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .footer-tab-container div .icon {
+    color: #CBCBCB !important;
+  }
+  .App-Mobile .footer-tab-container div .icon-active {
+    color: #0073b1 !important;
+  }
+  .App-Mobile .header-tab-container {
+    position: fixed;
+    height: 60px;
+    background-color: #0073b1;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px auto 50px;
+        grid-template-columns: 50px auto 50px;
+    -ms-grid-rows: 60px;
+        grid-template-rows: 60px;
+    z-index: 999;
+  }
+  .App-Mobile .header-tab-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .header-tab-container div .avatar {
+    background-color: #D0EEFF;
+    color: #0073b1;
+  }
+  .App-Mobile .header-tab-container div .icon {
+    color: #FFFFFF;
+  }
+  .App-Mobile .invite-box {
+    height: 100%;
+    background-color: #FFFFFF;
+    padding: 20px 15px 20px 15px;
+    border-radius: 5px;
+  }
+  .App-Mobile .invite-box .heading-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .invite-box .heading-container .share-icon {
+    margin-top: -8px;
+  }
+  .App-Mobile .invite-box .heading-container h4 {
+    padding-left: 10px;
+  }
+  .App-Mobile .invite-box .invite-form .input-container {
+    padding: 5px 0px 5px 0px;
+  }
+  .App-Mobile .invite-box .invite-form .input-container .input-error {
+    border: 1px solid #FF6359 !important;
+  }
+  .App-Mobile .invite-box .invite-form .input-container .input-success {
+    border: 1px solid #5ACC6C !important;
+  }
+  .App-Mobile .invite-box .invite-form .input-container .helper {
+    color: #FF6359 !important;
+  }
+  .App-Mobile .invite-box .invite-form .input-container div {
+    margin: 8px 0px 8px 0px;
+  }
+  .App-Mobile .invite-box .invite-row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 50px;
+        grid-template-columns: auto 50px;
+  }
+  .App-Mobile .invite-box .invite-row .delete-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .friend-request {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 30px;
+  }
+  .App-Mobile .friend-request .fr-box {
+    background-color: #FFFFFF;
+    height: 140px;
+    margin: 10px;
+    display: -ms-grid;
+    display: grid;
+    border-radius: 5px;
+    -ms-grid-columns: 0.3fr 0.7fr;
+        grid-template-columns: 0.3fr 0.7fr;
+  }
+  .App-Mobile .friend-request .fr-box .avatar-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .App-Mobile .friend-request .fr-box .avatar-box img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    display: block;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .App-Mobile .friend-request .fr-box .info-box {
+    padding: 10px 10px;
+  }
+  .App-Mobile .friend-request .fr-box .info-box h4 {
+    color: #707070 !important;
+    font-weight: 500 !important;
+    text-transform: capitalize;
+  }
+  .App-Mobile .friend-request .fr-box .info-box p {
+    font-size: 14px !important;
+    margin-bottom: 0.7rem !important;
+  }
+  .App-Mobile .friend-request .fr-box .info-box .btn-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+  .App-Mobile .friend-request .fr-box .info-box .btn-container .success-btn {
+    background-color: #50CB83 !important;
+    border-radius: 5px !important;
+  }
+  .App-Mobile .friend-request .fr-box .info-box .btn-container .danger-btn {
+    background-color: #FF6359 !important;
+    border-radius: 5px !important;
+  }
+  .App-Mobile .friend-request h3 {
+    color: #c3c3c3 !important;
+  }
+  .App-Mobile .mobile-search-box {
+    background-color: #FFFFFF;
+    padding: 30px 15px;
+    height: 100vh;
+  }
+  .App-Mobile .mobile-search-box .global-search-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 10px 0px;
+  }
+  .App-Mobile .mobile-search-box .global-search-item .global-profile-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .mobile-search-box .global-search-item h4 {
+    text-transform: capitalize !important;
+    margin: 0px;
+  }
+  .App-Mobile .mobile-search-box .global-search-item img {
+    height: 35px;
+    border-radius: 5px;
+  }
+  .App-Mobile .mobile-search-box .global-search-item p {
+    cursor: pointer;
+  }
+  .App-Mobile .profile-mobile-container {
+    padding-bottom: 70px;
+  }
+  .App-Mobile .profile-mobile-container .banner-container {
+    background-color: #FFFFFF;
+    height: 200px;
+  }
+  .App-Mobile .profile-mobile-container .banner-container img {
+    height: 100%;
+    width: 100%;
+  }
+  .App-Mobile .profile-mobile-container .banner-container .banner-profile-photo {
+    position: absolute;
+    top: 105px;
+    left: 10px;
+  }
+  .App-Mobile .profile-mobile-container .banner-container .rs-avatar-lg {
+    width: 100px !important;
+    height: 100px !important;
+    border: 4px solid #FFFFFF;
+    border-radius: 100%;
+    -webkit-box-shadow: inset 0 1.5px 3px 0 rgba(0, 0, 0, 0.1), 0 1.5px 3px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1.5px 3px 0 rgba(0, 0, 0, 0.1), 0 1.5px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  .App-Mobile .profile-mobile-container .profile-info-detail {
+    background-color: #FFFFFF;
+    padding: 15px;
+    background-color: #FFFFFF;
+  }
+  .App-Mobile .profile-mobile-container .profile-info-detail h3 {
+    font-weight: 300 !important;
+    padding-right: 5px;
+  }
+  .App-Mobile .profile-mobile-container .profile-info-detail h5 {
+    font-size: 16px !important;
+  }
+  .App-Mobile .profile-mobile-container .profile-info-detail .username-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .profile-mobile-container .profile-info-detail .username-box .verify {
+    color: #0073b1;
+    margin-bottom: 5px;
+  }
+  .App-Mobile .profile-mobile-container .connections-box {
+    background-color: #FFFFFF;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+    padding: 15px;
+  }
+  .App-Mobile .profile-mobile-container .connections-box .inside-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App-Mobile .profile-mobile-container .connections-box .inside-box p {
+    color: #0073b1 !important;
+    font-size: 16px !important;
+  }
+  .App-Mobile .profile-mobile-container .connections-box .inside-box h3 {
+    color: #3D3D3D !important;
+  }
+  .App-Mobile .newpost-card {
+    height: 140px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+  }
+  .App-Mobile .newpost-card .rs-btn.rs-btn-icon.rs-btn-icon-with-text {
+    background-color: #FFFFFF !important;
+  }
+  .App-Mobile .newpost-card .rs-icon.rs-icon {
+    background-color: #FFFFFF !important;
+  }
+  .App-Mobile .newpost-card .start-post {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .App-Mobile .newpost-card .start-post .button-container {
+    padding: 10px 20px 10px 20px;
+  }
+  .App-Mobile .newpost-card .post-button-toolbar {
+    border-top: 1px solid #c3c3c3;
+    padding-top: 5px;
+  }
+  .App-Mobile .newpost-card .post-button-toolbar .button-container-toolbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .App-Mobile .newpost-card .post-button-toolbar .button-container-toolbar #camera {
+    color: #7E30FF;
+  }
+  .App-Mobile .newpost-card .post-button-toolbar .button-container-toolbar #frame {
+    color: #E530FF;
+  }
+  .App-Mobile .newpost-card .post-button-toolbar .button-container-toolbar #more {
+    color: #FF7E30;
+  }
+}
+
+.rs-modal {
+  width: 100% !important;
+}
+/*# sourceMappingURL=AppMobile.css.map */
