@@ -1,17 +1,49 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useRef,useState} from 'react'
 import Item from "./Item"
 import {connect} from "react-redux"
+import {Button} from "rsuite"
 import * as action from "../../../../redux/actions/selfTimeline"
 function SelfTimeline(props) {
-    const {_fetchTimeline,data}=props
+    const {_fetchTimeline,data,_intersection,loading}=props
+    const [element,setElement]=useState(null)
+    const [timeline,setTimeline]=useState(null)
+    const observer =useRef(new IntersectionObserver((entries)=>{
+        const first=entries[0]
+        console.log("Observe: ",first)
+        if(first.isIntersecting){
+            _intersection()
+        }
+
+    },{threshold:1}))
 
     useEffect(()=>{
         _fetchTimeline()
     },[])
 
+   useEffect(()=>{
+    if(data!=null){
+        setTimeline(data)
+        console.log("Data Intersectino: ",data)
+    }
+   },[data])
+    useEffect(()=>{
+        const currentElement=element
+        const currentObserver=observer.current
+
+        if(currentElement){
+            currentObserver.observe(currentElement)
+        }
+
+        return ()=>{
+            if(currentElement){
+                currentObserver.unobserve(currentElement)
+            }
+        }
+    },[element])
+
     return (
         <div className="self-timeline-page">
-            {data!=null && data.data.results.map((item,index)=>{return(
+            {timeline!=null && timeline.data.results.map((item,index)=>{return(
             <Item  
             thumbnail={item.thumbnail}
             name={item.full_name}
@@ -25,6 +57,9 @@ function SelfTimeline(props) {
             image={item.image}
             />
             )})}
+            <div className="text-center" ref={setElement} >
+                <Button appearance="link" loading={loading} >Load More</Button>
+            </div>
         </div>
     )
 }
@@ -36,13 +71,15 @@ function SelfTimeline(props) {
 
 const mapStateToProps=(state)=>{
     return {
-        data:state.SelfTimelineReducer.data
+        data:state.SelfTimelineReducer.data,
+        loading:state.SelfTimelineReducer.loading
     }
 }
 
 const mapDispatchToProps=(dispatch)=>{
     return {
-        _fetchTimeline:()=>dispatch(action.fetchSelfTimeline())
+        _fetchTimeline:()=>dispatch(action.fetchSelfTimeline()),
+        _intersection:(data)=>dispatch(action.selfTimelineIntersection(data))
     }
 }
 

@@ -32,6 +32,12 @@ const LoaderOff=(action,state)=>{
     })
 }
 
+const intersectionSuccess=(action,state)=>{
+        return updateObject(state,{
+            data:action.payload.data
+        })
+   
+}
 
 
 const SelfTimelineReducer=(state=initialState,action)=>{
@@ -40,6 +46,7 @@ const SelfTimelineReducer=(state=initialState,action)=>{
         case actionTypes.UPDATE_SELF_TIMELINE_FAIL:return updateFail(action,state);
         case actionTypes.SELF_TIMELINE_START:return LoaderStart(action,state)
         case actionTypes.SELF_TIMELINE_OFF:return LoaderOff(action,state)
+        case actionTypes.UPDATE_SELF_TIMELINE_INTERSECTION_SUCCESS:return intersectionSuccess(action,state)
         default:
             return state
     }

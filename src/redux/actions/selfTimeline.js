@@ -28,3 +28,14 @@ export const loaderStart=()=>({
 export const loaderFail=()=>({
     type:actionTypes.SELF_TIMELINE_OFF
 })
+
+
+export const selfTimelineIntersection=(data)=>({
+    type:actionTypes.SELF_TIMELINE_INTERSECTION,
+    payload:{data}
+})
+
+export const updateSelfTimelineIntersection=(data)=>({
+    type:actionTypes.UPDATE_SELF_TIMELINE_INTERSECTION_SUCCESS,
+    payload:{data}
+})
