@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +10,35 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+@font-face {
+  font-family: 'Now';
+  src: local('Now'), url(./Assets//fonts/Now-Regular.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Now-Thin';
+  src: local('Now-Thin'), url(./Assets//fonts/Now-Thin.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Now-Light';
+  src: local('Now-Thin'), url(./Assets//fonts/Now-Light.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Now-Regular';
+  src: local('Now-Thin'), url(./Assets//fonts/Now-Regular.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Now-Medium';
+  src: local('Now-Thin'), url(./Assets//fonts/Now-Medium.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Now-Bold';
+  src: local('Now-Thin'), url(./Assets//fonts/Now-Bold.otf) format('truetype');
 }

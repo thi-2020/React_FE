@@ -3,14 +3,16 @@ import Banner from "./Banner"
 import Stats from "./Stats"
 import {NewPost} from "../../"
 import SelfTimeline from "./Self-Timeline/SelfTimeline"
-export default function ProfileDesktop() {
+import {connect} from "react-redux"
+function ProfileDesktop(props) {
+    const {profile}=props
     return (
         <div className="profile-page-desktop">
             <div className="container">
             <Banner/>
             <div className="row">
                 <div className="col-4">
-                <Stats/>
+                <Stats profile={profile} />
                 </div>
                 <div className="col-8">
                 <div className="mt-4">
@@ -23,3 +25,20 @@ export default function ProfileDesktop() {
         </div>
     )
 }
+
+
+
+const mapStateToProps=(state)=>{
+    return{
+        profile:state.ProfileReducer.data
+    }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+    return{
+
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProfileDesktop)

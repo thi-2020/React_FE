@@ -499,8 +499,21 @@ Button{
 
 
     }
+
+  
 }
 
-.rs-modal {
-    width: 100% !important;
+
+
+@media screen and (max-width:800px){
+    .rs-modal-sm {
+        width: 100% !important;
+        
+    }
+    .rs-modal-dialog{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
 }
+
+

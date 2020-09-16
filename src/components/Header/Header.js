@@ -82,8 +82,8 @@ const navigateSearch=()=>{
 
                 <div className={activeClass[1]?"nav-item-box-active":"nav-item-box"}
                 onClick={()=>activeClassIndex(1)}  >
-                  <Badge className="badge" content={fR!=null&&fR.count>0?fR.count:false} onClick={()=>history.push('/friend-request')} >
-                  <FaUserFriends size={25} className="nav-item-icon" />
+                  <Badge className="badge" content={fR!=null&&fR.count>0?fR.count:false}  >
+                  <FaUserFriends size={25} className="nav-item-icon" onClick={()=>history.push('/friend-request')} />
                   </Badge>
                     <span className="nav-item-title">My Network</span>
                 </div>

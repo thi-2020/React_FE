@@ -34,48 +34,48 @@ body {
     -webkit-touch-callout: none;
     margin: 0;
     padding: 0;
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: Now-Light !important;
 
   }
   h1 {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: Now-Medium !important;
     font-size: 36px !important;
-    font-weight: 700 !important;
+    // font-weight: 700 !important;
     color: $mattBlack;
   }
 
   h2 {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+      font-family: Now-Medium !important;
     font-size: 30px !important;
     font-weight: 500 !important;
   }
 
   h3 {
-    // font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: Now-Regular !important;
     font-size: 24px !important;
     font-weight: 700 !important;
   }
 
   h4 {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: Now-Regular !important;
     font-size: 20px !important;
     font-weight: 400;
   }
 
   h5 {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: Now-Regular !important;
     font-size: 16px !important;
     font-weight: 400 !important;
   }
   
   h6 {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: Now-Light !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     color: rgba(0,0,0,0.6) ;
   }
   p{
-    font-family: 'Proxima Nova', Georgia, sans-serif;   
+    font-family: Now-Light !important;
     font-size: 12px !important;
     font-weight: 400 !important;
     color:$mid-grey !important;
@@ -104,6 +104,7 @@ Input{
 }
 Button{
     border-radius: 2px !important;   
+    font-family: Now-Regular !important;
 }
 
 //-------------------- Main Layout Desktop----------------------
@@ -1026,13 +1027,13 @@ background-color: $grey-background;
     
     .item-box{
         background-color: $white;
-        margin: 15px 0px;
-        padding: 15px 20px;
+        margin: 8px 0px;
+        padding: 15px 0px 30px 0px;
         border-radius: 5px;
         .top-box{
             display: grid;
             grid-template-columns: 50px auto 130px;
-
+            padding: 0px 20px;
             .avatar-box{
                 border-radius: 50%;
                 img{
@@ -1047,22 +1048,23 @@ background-color: $grey-background;
                 p{
                     font-size: 18px !important;
                     margin-bottom: 0.3rem;
-                    color: $mattBlack !important;
+                    color: $primary!important;
                     font-weight: 500 !important;
+                    text-transform: capitalize;
                 }
             }
             .time-box{
                 display: flex;
-                justify-content: flex-end;
-                flex-direction: column;
+                justify-content: space-between;
                 align-items: center;
                 p{
                     font-size: 14px !important;
+                    margin: 0;
                 }
             }
         }
         .text-post-container{
-            padding: 10px 0px;
+            padding: 10px 20px;
 
             p{
                 font-size: 14px !important;
@@ -1071,8 +1073,10 @@ background-color: $grey-background;
             }
         }
         .photo-container{
+            border-top: 1px solid #F2F5F7;
+            border-bottom: 1px solid #F2F5F7;
             overflow: hidden;
-            height: 400px;
+            // height: 400px;
             img{
                 // height:100px ;
                 width: 100%;
@@ -1083,20 +1087,52 @@ background-color: $grey-background;
             display: grid;
             grid-template-columns: repeat(3,1fr);
             column-gap: 20px;
-            padding-top: 15px;
+            padding: 10px 20px; 
+            border-top: 1px solid #F2F5F7;
+            border-bottom: 1px solid #F2F5F7;
+        }
+
+        .like-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            p{
+                margin: 0px !important;
+                color: $primary !important;
+                font-size: 18px !important;
+                cursor: pointer;
+            }
+        }
+    
+        .comment-box{
+            padding: 20px 20px;
+            .comment-input-box{
+                display: grid;
+                grid-template-columns: 50px auto;
+                column-gap: 15px;
+
+                .avatar-box{
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        border-radius: 50%;
+                        height: 35px;
+                    }
+                }
+                .input-box{
+                    Input{
+                        border-radius: 20px !important;
+                    }
+                }
+            }
         }
     }
 
-    .like-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        p{
-            color: $primary !important;
-            cursor: pointer;
-        }
-    }
+  
 }
 
 

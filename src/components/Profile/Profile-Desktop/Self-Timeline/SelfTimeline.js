@@ -7,14 +7,14 @@ function SelfTimeline(props) {
     const {_fetchTimeline,data,_intersection,loading}=props
     const [element,setElement]=useState(null)
     const [timeline,setTimeline]=useState(null)
-    const observer =useRef(new IntersectionObserver((entries)=>{
+    const observer = useRef(new IntersectionObserver((entries)=>{
         const first=entries[0]
         console.log("Observe: ",first)
         if(first.isIntersecting){
             _intersection()
         }
 
-    },{threshold:1}))
+    },{threshold:0.25}))
 
     useEffect(()=>{
         _fetchTimeline()
@@ -55,10 +55,11 @@ function SelfTimeline(props) {
             comments={item.no_of_comments}
             content={item.content}
             image={item.image}
+            key={index}
             />
             )})}
             <div className="text-center" ref={setElement} >
-                <Button appearance="link" loading={loading} >Load More</Button>
+                <Button appearance="link" onClick={()=>_intersection()}  loading={loading} >Load More</Button>
             </div>
         </div>
     )

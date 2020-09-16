@@ -12,11 +12,15 @@ function NewPost(props) {
         setShow(false)
     }
     },data)
+    const modalClose=()=>{
+        setShow(false)
+    }
+
     return (
         <div className="newpost-card" onClick={()=>setShow(true)} >
             <div className="start-post">
                 <div className="button-container">
-                    <IconButton icon={<Icon icon="edit" size="3x"/>} placement="left" size="lg" block onClick={()=>setShow(true)} >
+                    <IconButton icon={<Icon icon="edit" size="3x"/>} placement="left" size="lg" block >
                         Start a Post
                     </IconButton>
                 </div>
@@ -49,7 +53,7 @@ function NewPost(props) {
                     </div>
                 </div>
              </div>
-             {show&&<CreatePost show={show} setShow={setShow} />}
+             <CreatePost show={show} setShows={()=>setShow(false)} />
         </div>
     )
 }

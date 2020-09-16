@@ -5,7 +5,7 @@ import {connect} from "react-redux"
 import * as action from "../../redux/actions/createPost"
 
  function CreatePost(props) {
-    const {show,setShow,_createPost,loading}=props
+    const {show,setShows,_createPost,loading}=props
     const [fileInfo, setFileInfo] = React.useState(null);
     const [fileObject,setFileObject]=React.useState(null)
     const [content,setContent]=React.useState('')
@@ -28,10 +28,15 @@ import * as action from "../../redux/actions/createPost"
         }
         _createPost(data)
     }
+
+    const onClose=()=>{
+        setShows(false)
+        console.log("Show: ",show)
+    }
     return (
-        <div>
-            <Modal show={show} onHide={()=>setShow(false)} overflow >
-                <Modal.Header>
+        <div className="create-post-page" >
+            <Modal show={show} onHide={setShows} size="sm"  dialogClassName="cp-modal" onExit={setShows} >
+                <Modal.Header onHide={onClose}>
                     <Modal.Title>Create Post</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
