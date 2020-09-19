@@ -137,3 +137,49 @@ export const SELF_TIMELINE_INTERSECTION_FAIL=                   "SELF_TIMELINE_I
 export const UPDATE_SELF_TIMELINE_INTERSECTION_SUCCESS=                   "UPDATE_SELF_TIMELINE_INTERSECTION_SUCCESS"
 export const UPDATE_SELF_TIMELINE_INTERSECTION_FAIL=                   "UPDATE_SELF_TIMELINE_INTERSECTION_FAIL"
 
+
+//---------------------GET SETTINGS-----------
+export const GET_VISIBILITY_OPTIONS=                            "GET_VISIBILITY_OPTIONS"
+export const GET_VISIBILITY_OPTIONS_SUCCESS=                     "GET_VISIBILITY_OPTIONS_SUCCESS"
+export const GET_VISIBILITY_OPTIONS_FAIL=                        "GET_VISIBILITY_OPTIONS_FAIL"
+export const UPDATE_GET_VISIBILITY_OPTIONS_SUCCESS=              "UPDATE_GET_VISIBILITY_OPTIONS_SUCCESS"
+export const UPDATE_GET_VISIBILITY_OPTIONS_FAIL=                 "UPDATE_GET_VISIBILITY_OPTIONS_FAIL"
+
+export const SETTING_START=                             "SETTING-START"
+export const SETTING_OFF=                               "SETTING_OFF"
+
+//--------------UPDATE VISIBILITY-----------------
+export const CHANGE_VISIBILITY_OPTION=                      "CHANGE_VISIBILITY_OPTION"
+export const CHANGE_VISIBILITY_OPTION_SUCCESS=              "CHANGE_VISIBILITY_OPTION_SUCCESS"
+export const CHANGE_VISIBILITY_OPTION_FAIL=                 "CHANGE_VISIBILITY_OPTION_FAIL"
+export const UPDATE_V_O_SUCCESS=                            "UPDATE_V_O_SUCCESS"                  
+export const UPDATE_V_O_FAIL=                               "UPDATE_V_O_FAIL"  
+
+export const GET_VISBILITY_SELECTED=                        "GET_VISBILITY_SELECTED"
+export const GET_VS_SUCCESS=                                "GET_VS_SUCCESS"
+export const GET_VS_FAIL=                                   "GET_VS_FAIL"
+export const UPDATE_VS_SUCCESS=                             "UPDATE_VS_SUCCESS"
+
+//---------------GET CONNECTIONS------------------
+
+export const GET_CONNECTION_START=                  "GET_CONNECTION_START"
+export const GET_CONNECTION_OFF=                  "GET_CONNECTION_FAIL"
+
+export const GET_FOLLOWERS_LIST=                    "GET_FOLLOWERS_LIST"
+export const GET_FOLLOWERS_LIST_SUCCESS=             "GET_FOLLOWERS_LIST_SUCCESS"
+export const GET_FOLLOWERS_LIST_FAIL=                "GET_FOLLOWERS_LIST_FAIL"
+export const UPDATE_FOLLOWERS_SUCCESS=              "UPDATE_FOLLOWERS_SUCCESS"
+export const UPDATE_FOLLOWERS_FAIL=                 "UPDATE_FOLLOWERS_FAIL"
+
+
+export const GET_FOLLOWING_LIST=                    "GET_FOLLOWING_LIST"
+export const GET_FOLLOWING_LIST_SUCCESS=            "GET_FOLLOWING_LIST_SUCCESS"
+export const GET_FOLLOWING_LIST_FAIL=               "GET_FOLLOWING_LIST_FAIL"
+export const UPDATE_FOLLOWING_SUCCESS=              "UPDATE_FOLLOWING_SUCCESS"
+export const UPDATE_FOLLOWING_FAIL=                 "UPDATE_FOLLOWING_FAIL"
+
+export const GET_CONNECTION_LIST=                    "GET_CONNECTION_LIST"
+export const GET_CONNECTION_LIST_SUCCESS=            "GET_CONNECTION_LIST_SUCCESS"
+export const GET_CONNECTION_LIST_FAIL=               "GET_CONNECTION_LIST_FAIL"
+export const UPDATE_CONNECTION_SUCCESS=              "UPDATE_CONNECTION_SUCCESS"
+export const UPDATE_CONNECTION_FAIL=                 "UPDATE_CONNECTION_FAIL"

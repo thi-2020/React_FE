@@ -55,6 +55,7 @@ function SelfTimeline(props) {
             comments={item.no_of_comments}
             content={item.content}
             image={item.image}
+            timestamp={item.timestamp}
             key={index}
             />
             )})}

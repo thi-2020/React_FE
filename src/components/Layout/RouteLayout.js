@@ -2,25 +2,29 @@ import React,{useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Route,Redirect} from "react-router-dom"
 import {connect} from "react-redux"
-
-const RouteLayout=(props)=> {
-    const{layout:Layout,component:Component,...rest}=props;   
+import history from "../../helpers/History"
+const RouteLayout=({layout:Layout,component:Component,...rest,props})=> {
+    // const{layout:Layout,component:Component,...rest}=props;   
     useEffect(()=>{
     console.log("In Feed: ",props)
     })
     return (
         <Route
         {...rest}
-        render={matchProps=>
-            // props.isAuthenticated?
+        render={matchProps=>{
+            console.log("matchprops: ",matchprops)
+            props.isAuthenticated?
+
             (
             <Layout>
                 <Component {...matchProps}  />
-            </Layout>)
-        // ):
-        // (<Redirect to={{pathname: '/login', state: { from: props.location } }} />)
-        // }    
-            }    
+            </Layout>
+        ):
+        (<Redirect to={{pathname: '/login', state: { from: props.location } }} />)
+        }
+        
+        }    
+            
         />
     )
 }

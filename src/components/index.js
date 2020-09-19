@@ -16,6 +16,8 @@ import {Profile} from "./Profile/Profile-Mobile"
 import MainLayoutDesktop from "./Layout/MainLayout-Desktop"
 import ProfileDesktop from "./Profile/Profile-Desktop/ProfileDesktop"
 import CreatePost from "./Create-Post/CreatePost"
+import Settings from "./Settings/Settings"
+import Connection from "./Profile/Connection/Connection"
 export {
     Header,
     Login,
@@ -34,5 +36,7 @@ export {
     Profile,
     MainLayoutDesktop,
     ProfileDesktop,
-    CreatePost
+    CreatePost,
+    Settings,
+    Connection
 }

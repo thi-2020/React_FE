@@ -88,6 +88,7 @@ p {
 
 .App .main-layout-desktop {
   height: 100vh;
+  margin-top: 15px;
 }
 
 .App .main-layout-desktop .invite-img {
@@ -1128,8 +1129,8 @@ p {
 .self-timeline-page .item-box .top-box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px auto 130px;
-      grid-template-columns: 50px auto 130px;
+  -ms-grid-columns: 50px auto 230px;
+      grid-template-columns: 50px auto 230px;
   padding: 0px 20px;
 }
 
@@ -1167,9 +1168,9 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1342,5 +1343,44 @@ p {
 
 .rs-modal-body .post-button-toolbar .rs-uploader-text .rs-uploader-file-item {
   display: none !important;
+}
+
+.settings-page .container {
+  height: 100vh;
+  padding: 20px;
+  margin: 15px;
+  background-color: #fff !important;
+}
+
+.settings-page .rs-picker-toggle-value {
+  text-transform: capitalize !important;
+}
+
+.connection-page .container {
+  padding: 20px;
+  margin: 15px;
+  height: 100vh;
+  background-color: #fff !important;
+}
+
+.connection-page .container .rs-radio-group {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 100% !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
+}
+
+.rs-picker-select-menu-item {
+  text-transform: capitalize !important;
+}
+
+.rs-picker-toggle-placeholder {
+  text-transform: capitalize !important;
 }
 /*# sourceMappingURL=App.css.map */

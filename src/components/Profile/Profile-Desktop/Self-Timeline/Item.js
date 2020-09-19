@@ -16,7 +16,7 @@ export default function Item(props) {
                     <p>{props.name}</p>
                 </div>
                 <div className="time-box">
-                    <p>{moment("20200831", "YYYYMMDD").fromNow()}</p>
+                    <p>{moment(props.timestamp).startOf('second').fromNow()}</p>
                     <Button appearance="subtle" ><FiMoreHorizontal size={22} /></Button>
                 </div>
             </div>

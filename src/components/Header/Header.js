@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {connect} from "react-redux"
 import {images} from "../../constant"
 import {GoHome,BsBell,FaUserFriends,AiOutlineMessage} from "react-icons/all"
-import {Icon,InputGroup,Input,Avatar,Badge} from 'rsuite'
+import {Icon,InputGroup,Input,Avatar,Badge,Dropdown} from 'rsuite'
 import * as action from "../../redux/actions/auth"
 import * as frndReq from "../../redux/actions/friendRequest"
 import * as search from "../../redux/actions/search"
@@ -104,7 +104,19 @@ const navigateSearch=()=>{
                     <span className="nav-item-title">Notifications</span>
                 </div>
                 <div className="nav-item-box">
-                   <Avatar size="md" className="avatar" onClick={()=>history.push('/profile')} circle>HB</Avatar>
+                  <Dropdown
+                  renderTitle={()=>{
+                    return(<Avatar size="md" className="avatar"  circle>HB</Avatar>)
+                  }}
+                  >
+                    <Dropdown.Item onClick={()=>history.push('/profile')}>
+                      <Icon icon="profile" /> Profile
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={()=>history.push('/settings')}>
+                      <Icon icon="setting" /> Settings
+                    </Dropdown.Item>
+                  </Dropdown>
+                   
                 </div>
             </div>
         </div>

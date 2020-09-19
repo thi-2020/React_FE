@@ -5,14 +5,14 @@ import {images} from "../../constant"
 import history from "../../helpers/History"
 const {photos}=images
 
-export default function MainLayoutDesktop(props) {
+const MainLayoutDesktop=(props)=> {
 
     useEffect(()=>{
         console.log("Main Layout: ",props)
     },[])
     return (
         <div className="main-layout-desktop">
-            <Header/>
+            {/* <Header/> */}
             <div className="container">
             <div className="row">
                 <div className="col-3">
@@ -23,7 +23,10 @@ export default function MainLayoutDesktop(props) {
                 <div className="col-6">
                     <div className="feed-box">
                     {/* <NewPost/> */}
-                    <props.component/>
+                    {/* <props.children/> */}
+                    {/* <props.component/> */}
+                    {props.children}
+                    
                     </div>        
                 </div>
                 <div className="col-3">
@@ -38,3 +41,6 @@ export default function MainLayoutDesktop(props) {
 MainLayoutDesktop.propTypes = {
     children: PropTypes.node
   };
+
+
+  export default MainLayoutDesktop

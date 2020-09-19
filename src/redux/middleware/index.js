@@ -10,6 +10,8 @@ import {mututalMdl} from "./_MutualFriends"
 import {profileMdl} from "./_Profile"
 import {createPostMdl} from "./_CreatePost"
 import {selfTimelineMdl} from "./_SelfTimeline"
+import {settingsMdl} from "./_Settings"
+import {connectionMdl} from "./_Connection"
 export const Middleware=[
     authApi,
     postApi,
@@ -22,5 +24,7 @@ export const Middleware=[
     ...mututalMdl,
     ...profileMdl,
     ...createPostMdl,
-    ...selfTimelineMdl
+    ...selfTimelineMdl,
+    ...settingsMdl,
+    ...connectionMdl
 ]

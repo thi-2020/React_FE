@@ -26,39 +26,33 @@ const App = (props) => {
       <Suspense fallback={<div />} >
         <Router history={history} >
           <Switch>
-            {!isAuthenticated && _PublicPages.map((page, index) => {
-              if(page.isMobile==false){
-                return (
-                  <Route path={page.pageLink} exact render={({ match }) => <page.view />} key={index} />
+            {_AuthenticatedPages.map((item,index)=>{
+              if(item.isMobile==false){
+                return(
+                  <PrivateRoute
+                  component={item.view}
+                  exact
+                  path={item.pageLink}
+                  layout={item.layout}
+                  key={index}
+                  />
                 )
               }
-             
+            
             })}
-            {_AuthenticatedPages.map((page, index) => {
-              if(page.isMobile==false){
-                if(page.pageLink!=='/profile'){
-                  return (
-                    <RouteLayout
-                    component={page.view}
-                    exact
-                    path={page.pageLink}
-                    key={index}
-                    layout={MainLayoutDesktop}
-                    />
-                  )
-                }
-                else{
-                  return(
-                    <PrivateRoute path={page.pageLink} exact component={page.view} key={index} />
-                  )
 
-                }            
-              }
-             
-            })}
-          </Switch>
+          {_PublicPages.map((item,index)=>{
+            return(
+                <Route
+                component={item.view}
+                exact
+                path={item.pageLink}
+                key={index}
+                />
+            )
+          })}  
+        </Switch>
         </Router>
-        {isMobile && isAuthenticated && <FooterTab />}
       </Suspense>
     </div>
     </>

@@ -112,7 +112,7 @@ Button{
 
 .main-layout-desktop{
     height:100vh;
-
+    margin-top: 15px;
     .left-layout{
         
     }
@@ -124,6 +124,8 @@ Button{
         top: 80px;
     }
 }
+
+
 
 
 
@@ -1032,7 +1034,7 @@ background-color: $grey-background;
         border-radius: 5px;
         .top-box{
             display: grid;
-            grid-template-columns: 50px auto 130px;
+            grid-template-columns: 50px auto 230px;
             padding: 0px 20px;
             .avatar-box{
                 border-radius: 50%;
@@ -1055,7 +1057,7 @@ background-color: $grey-background;
             }
             .time-box{
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: center;
                 p{
                     font-size: 14px !important;
@@ -1194,6 +1196,46 @@ background-color: $grey-background;
             display: none !important;
         }
     }
+}
+
+
+.settings-page{
+    .container{    
+        height: 100vh;
+        padding: 20px;
+        margin: 15px;
+        background-color: #fff !important;
+    }
+
+
+    .rs-picker-toggle-value{
+        text-transform: capitalize !important;
+    }
+    
+}
+
+.connection-page{
+    .container{
+        padding: 20px;
+        margin: 15px;
+        height: 100vh;
+        background-color: #fff !important;
+
+        .rs-radio-group {
+            display: flex !important;
+            width: 100% !important;
+            flex-direction: row !important;
+            justify-content: space-around !important;
+        }
+    }
+}
+
+.rs-picker-select-menu-item{
+    text-transform: capitalize !important;
+
+}
+.rs-picker-toggle-placeholder{
+    text-transform: capitalize !important;
 }
 
 

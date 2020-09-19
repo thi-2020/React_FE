@@ -8,8 +8,12 @@ import {Login,
   SearchDesktop,
   Profile,
   ProfileDesktop,
-  NewPost
+  NewPost,
+  MainLayoutDesktop,
+  Settings,
+  Connection
 } from "../components/index"
+import {NormalLayout} from "../components/Layout"
 
 
 
@@ -18,57 +22,80 @@ const _AuthenticatedPages = [
       pageLink: '/feed',
       view: NewPost,
       displayName: 'Feed',
-      showInNavbar: true,
-      isMobile:false
+      isMobile:false,
+      layout:MainLayoutDesktop,
     },
     {
       pageLink: '/invite',
       view: Invite,
       displayName: 'Invite',
-      showInNavbar: true,
-      isMobile:false
+      isMobile:false,
+      layout:MainLayoutDesktop,
+
     },
     {
       pageLink: '/friend-request',
       view: FriendRequestMobile,
       displayName: 'Friend Request',
-      showInNavbar: true,
-      isMobile:true
+      isMobile:true,
+      layout:MainLayoutDesktop,
+
     },
     {
       pageLink: '/friend-request',
       view: FriendRequestDesktop,
       displayName: 'Friend Request',
-      showInNavbar: true,
-      isMobile:false
+      isMobile:false,
+      layout:MainLayoutDesktop,
+
     },
     {
       pageLink: '/mobile-search',
       view: MobileSearch,
       displayName: 'Mobile Search',
-      showInNavbar: true,
-      isMobile:true
+      isMobile:true,
+      layout:MainLayoutDesktop,
+
     },
     {
       pageLink: '/search',
       view: SearchDesktop,
       displayName: 'Search Desktop',
-      showInNavbar: true,
-      isMobile:false
+      isMobile:false,
+      layout:MainLayoutDesktop,
+
     },
     {
       pageLink: '/profile',
       view: Profile,
       displayName: 'Profile',
-      showInNavbar: true,
-      isMobile:true
+      isMobile:true,
+      layout:NormalLayout,
+
     },
     {
       pageLink: '/profile',
       view: ProfileDesktop,
       displayName: 'Profile',
-      showInNavbar: true,
-      isMobile:false
+      isMobile:false,
+      layout:NormalLayout,
+
+    },
+    {
+      pageLink: '/settings',
+      view: Settings,
+      displayName: 'Settings',
+      isMobile:false,
+      layout:NormalLayout,
+
+    },
+    {
+      pageLink: '/connection',
+      view: Connection,
+      displayName: 'Connection',
+      isMobile:false,
+      layout:NormalLayout,
+
     },
   ]
 
