@@ -37,8 +37,8 @@ export const isFetchProfileSuccess=({dispatch})=>next=>action=>{
         let data=action.payload
         if(data!=null){
             dispatch(registerSuccess(data))
-                history.push('/')
-            Alert.success('Login Success!',2000)
+                // history.push('/')
+            // Alert.success('Login Success!',2000)
         }
     }
 }

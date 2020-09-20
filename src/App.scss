@@ -1,4 +1,5 @@
-$primary:#0073b1;
+// $primary:#0073b1;
+$primary:#00916E;
 $bg:#D0EEFF;
 $grey-background:#F2F5F7;
 $secondary:#FF7E30;
@@ -994,8 +995,9 @@ background-color: $grey-background;
         align-items: center;
         .profile-pic-box{
             padding-right: 30px;
+            position: relative;
         }
-        
+      
         .info-box{
             width: 100%;
             h3{
@@ -1021,7 +1023,27 @@ background-color: $grey-background;
         border-radius: 50% !important;
     }
     
+    .camera-profile{
+        height: 30px;
+    position: absolute;
+    /* top: 0px; */
+    bottom: 25px;
+    left: 153px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    }
 
+    .camera-cover{
+        height: 30px;
+        position: absolute;
+        /* top: 0px; */
+        top: 25px;
+        right: 30px;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
    
 }
 
@@ -1226,6 +1248,32 @@ background-color: $grey-background;
             width: 100% !important;
             flex-direction: row !important;
             justify-content: space-around !important;
+        }
+    }
+
+
+
+    .connection-item-page{
+        .grid-container{
+            display: grid;
+            grid-template-columns: 70px auto 200px;
+            margin: 15px 0px;
+            img{
+                height: 55px;
+                border-radius: 50%;
+            }
+            .info-container{
+                padding: 5px 10px;
+                display: flex;
+                align-items: center;
+
+                h4{
+                    color: $primary !important;
+                    cursor: pointer;
+                    text-transform: capitalize !important;
+                    margin: 0;
+                }
+            }
         }
     }
 }

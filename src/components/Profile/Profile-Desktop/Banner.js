@@ -1,9 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Info from "./Info"
 import {images} from "../../../constant"
-import {Avatar} from "rsuite"
+import {Avatar,Modal,Button,Uploader,Icon} from "rsuite"
+import {connect} from "react-redux"
+import * as action from "../../../redux/actions/profile"
+import * as API from "../../../api"
 const {photos}=images
-export default function Banner() {
+function Banner(props) {
+    const [show,setShow]=useState(false)
+    const [cover,setCover]=useState(false)
+    const [fileInfo,setFile]=useState(null)
+    const [fileObject,setFileObject]=useState(null)
+    const {loading,_changeProfile,profile}=props
+    const previewFile=(file,callback)=>{
+        const reader= new FileReader()
+        reader.onloadend=()=>{
+            callback(reader.result)
+            console.log("File Result: ",reader)
+        };
+        reader.readAsDataURL(file)
+        setFileObject(file)
+
+    }
+
     return (
         <div className="banner-desktop">
                 <div className="banner-photo-box">
@@ -12,10 +31,85 @@ export default function Banner() {
                 </div>
                 <div className="avatar-box">
                 <div className="profile-pic-box">
-                <Avatar src={photos.avatar}  circle />
+
+                <Avatar src={`${API.BASE_URI}${profile!=null&&profile.profile_photo}`}  circle />
                 </div>
                 <Info/>
                 </div>
+                <img src={photos.camera} className="camera-profile" onClick={()=>setShow(true)} />
+                <img src={photos.camera} className="camera-cover" onClick={()=>setCover(true)} />
+
+                <Modal show={show} onHide={()=>setShow(false)} >
+                    <Modal.Header>
+                        <Modal.Title>Change Profile Photo</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Uploader listType="picture" fileListVisible={false}
+                        onUpload={(file)=>{
+                            previewFile(file.blobFile,value=>{
+                                setFile(value)
+                            })}}
+                            block
+                            style={{display:"flex",justifyContent:"center"}}
+                        >
+                        <button style={{height:150,width:150}}>
+                       {fileInfo?
+                       <img src={fileInfo} style={{height:150,width:150}} />:
+                       <Icon icon="avatar" size="5x" />}
+                        </button>
+                        </Uploader>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button appearance="subtle" onClick={()=>setShow(false)} >Cancel</Button>
+                        <Button appearance="ghost" color="red" loading={loading} >Delete Photo</Button>
+                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject)}  loading={loading} >Upload</Button>
+                    </Modal.Footer>
+                </Modal>
+
+                <Modal show={cover} onHide={()=>setCover(false)} >
+                    <Modal.Header>
+                        <Modal.Title>Change Cover Photo</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Uploader listType="picture" fileListVisible={false}
+                        onUpload={(file)=>{
+                            previewFile(file.blobFile,value=>{
+                                setFile(value)
+                            })}}
+                            block
+                            style={{display:"flex",justifyContent:"center",width:"100%"}}
+                        >
+                        <button style={{height:150,width:"500px"}}>
+                       {fileInfo?
+                       <img src={fileInfo} style={{height:150,width:"500px"}} />:
+                       <Icon icon="avatar" size="5x" />}
+                        </button>
+                        </Uploader>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button appearance="subtle" onClick={()=>setCover(false)} >Cancel</Button>
+                        <Button appearance="ghost" color="red" loading={loading} >Delete Photo</Button>
+                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject)}  loading={loading} >Upload</Button>
+                    </Modal.Footer>
+                </Modal>
         </div>
     )
 }
+
+
+
+
+const mapStateToProps=(state)=>{
+    return{
+        loading:state.ProfileReducer.loading
+    }
+}
+
+const mapDisptachToProps=dispatch=>{
+    return{
+        _changeProfile:(data)=>dispatch(action.changeProfile(data))
+    }
+}
+
+
+export default connect(mapStateToProps,mapDisptachToProps)(Banner)

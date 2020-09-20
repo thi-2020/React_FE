@@ -26,5 +26,11 @@ export const loaderStart=()=>({
 
 
 export const loaderFail=()=>({
-    type:actionTypes.FETCH_PROFILE_FAIL
+    type:actionTypes.FETCH_PROFILE_OFF
+})
+
+
+export const changeProfile=(data)=>({
+    type:actionTypes.CHANGE_PROFILE,
+    payload:data
 })

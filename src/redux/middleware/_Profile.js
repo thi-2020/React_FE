@@ -40,6 +40,33 @@ export const fetchProfileFail=({dispatch})=>next=>action=>{
 }
 
 
+export const changeProfilePhoto=({dispatch})=>next=>action=>{
+    next(action)
+    if(action.type===actionTypes.CHANGE_PROFILE){
+        let data=action.payload
+        const formData=new FormData()
+        formData.append('profile_photo',data)
+        let onSuccess=actionTypes.CHANGE_PROFILE_SUCCESS;
+        let onError=actionTypes.CHANGE_PROFILE_FAIL
+        dispatch(authApi('POST',API.CHANGE_PROFILE,null,onSuccess,onError,formData,null))
+        dispatch(loaderStart())
+    }
+}
 
+export const changeProfileSuccess=({dispatch})=>next=>action=>{
+    next(action)
+    if(action.type===actionTypes.CHANGE_PROFILE_SUCCESS){
+        let data=action.payload;
+        console.log("Profile Photo Uploaded Successfuly! ",data)
+        Alert.success('Profile Photo Updated Successfuly! ',2000)
+        dispatch({type:actionTypes.FETCH_PROFILE})
+    }
+}
 
-export const profileMdl=[fetchProfile,fetchProfileSuccess,fetchProfileFail]
+export const profileMdl=[
+    fetchProfile,
+    fetchProfileSuccess,
+    fetchProfileFail,
+    changeProfilePhoto,
+    changeProfileSuccess
+]

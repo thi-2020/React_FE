@@ -9,7 +9,9 @@ function ProfileDesktop(props) {
     return (
         <div className="profile-page-desktop">
             <div className="container">
-            <Banner/>
+            <Banner
+            profile={profile}
+            />
             <div className="row">
                 <div className="col-4">
                 <Stats profile={profile} />

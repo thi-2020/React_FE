@@ -27,6 +27,7 @@ export const handleCreatePostSuccess=({dispatch})=>next=>action=>{
         let data=action.payload
         if(data){
             dispatch(updateCreatePostSuccess(data))
+            dispatch({type:actionTypes.SELF_TIMELINE})
             history.push('/profile')
         }
         dispatch(loaderFail())

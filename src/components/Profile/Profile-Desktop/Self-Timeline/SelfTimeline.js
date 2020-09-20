@@ -3,18 +3,11 @@ import Item from "./Item"
 import {connect} from "react-redux"
 import {Button} from "rsuite"
 import * as action from "../../../../redux/actions/selfTimeline"
+import IntersectionWrapper from "../../../HOC/intersectionWrapper"
 function SelfTimeline(props) {
-    const {_fetchTimeline,data,_intersection,loading}=props
-    const [element,setElement]=useState(null)
+    const {_fetchTimeline,data,_intersection,loading,setElement,isIntersecting}=props
     const [timeline,setTimeline]=useState(null)
-    const observer = useRef(new IntersectionObserver((entries)=>{
-        const first=entries[0]
-        console.log("Observe: ",first)
-        if(first.isIntersecting){
-            _intersection()
-        }
 
-    },{threshold:0.25}))
 
     useEffect(()=>{
         _fetchTimeline()
@@ -24,23 +17,17 @@ function SelfTimeline(props) {
     if(data!=null){
         setTimeline(data)
         console.log("Data Intersectino: ",data)
+        console.log("Child Component: ",props)
     }
    },[data])
-    useEffect(()=>{
-        const currentElement=element
-        const currentObserver=observer.current
+   
 
-        if(currentElement){
-            currentObserver.observe(currentElement)
-        }
-
-        return ()=>{
-            if(currentElement){
-                currentObserver.unobserve(currentElement)
-            }
-        }
-    },[element])
-
+   useEffect(()=>{
+    console.log("Is Intersecting: ",isIntersecting)
+    if(isIntersecting){
+        _intersection()
+    }
+   },[isIntersecting])
     return (
         <div className="self-timeline-page">
             {timeline!=null && timeline.data.results.map((item,index)=>{return(
@@ -85,6 +72,6 @@ const mapDispatchToProps=(dispatch)=>{
     }
 }
 
+SelfTimeline=connect(mapStateToProps,mapDispatchToProps)(SelfTimeline)
 
-
-export default connect(mapStateToProps,mapDispatchToProps)(SelfTimeline)
+export default IntersectionWrapper(SelfTimeline)

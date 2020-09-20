@@ -9,7 +9,8 @@ export const photos={
     avatar:require('../Assets/images/avatar.png'),
     invite:require('../Assets/images/invite.png'),
     avatar1:require('../Assets/images/avatar3.png'),
-    profileBanner:require('../Assets/images/banner.jpg')
+    profileBanner:require('../Assets/images/banner.jpg'),
+    camera:require('../Assets/images/camera.png')
 }
 
 

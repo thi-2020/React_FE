@@ -125,12 +125,12 @@ Button {
     color: #CBCBCB !important;
   }
   .App-Mobile .footer-tab-container div .icon-active {
-    color: #0073b1 !important;
+    color: #00916E !important;
   }
   .App-Mobile .header-tab-container {
     position: fixed;
     height: 60px;
-    background-color: #0073b1;
+    background-color: #00916E;
     top: 0;
     left: 0;
     right: 0;
@@ -155,7 +155,7 @@ Button {
   }
   .App-Mobile .header-tab-container div .avatar {
     background-color: #D0EEFF;
-    color: #0073b1;
+    color: #00916E;
   }
   .App-Mobile .header-tab-container div .icon {
     color: #FFFFFF;
@@ -372,7 +372,7 @@ Button {
             align-items: center;
   }
   .App-Mobile .profile-mobile-container .profile-info-detail .username-box .verify {
-    color: #0073b1;
+    color: #00916E;
     margin-bottom: 5px;
   }
   .App-Mobile .profile-mobile-container .connections-box {
@@ -402,7 +402,7 @@ Button {
             align-items: center;
   }
   .App-Mobile .profile-mobile-container .connections-box .inside-box p {
-    color: #0073b1 !important;
+    color: #00916E !important;
     font-size: 16px !important;
   }
   .App-Mobile .profile-mobile-container .connections-box .inside-box h3 {

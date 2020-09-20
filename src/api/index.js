@@ -22,3 +22,5 @@ export const GET_VISIBILITY_SELECTED=   "/accounts/settings/get_visibility_setti
 export const FOLLOWERS_LIST=            "/accounts/follow/follwers_list/"
 export const FOLLOWING_LIST=            "/accounts/follow/follwing_list/"
 export const CONNECTIONS=               "/accounts/connection/others_all_connections/"
+
+export const CHANGE_PROFILE=            "/accounts/profile/update_profile_photo/"

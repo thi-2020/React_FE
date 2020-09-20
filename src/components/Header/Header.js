@@ -6,6 +6,7 @@ import {Icon,InputGroup,Input,Avatar,Badge,Dropdown} from 'rsuite'
 import * as action from "../../redux/actions/auth"
 import * as frndReq from "../../redux/actions/friendRequest"
 import * as search from "../../redux/actions/search"
+import * as API from "../../api"
 import history from "../../helpers/History"
 import Search from './Search'
 import HeaderWrapper from "../HOC/headerWrapper"
@@ -14,7 +15,7 @@ const {logo}=images
 function Header(props) {
 // const location=useLocation()
     // const {pages,isAuthenticated,_Logout,fR,_fetchFriendRequest,_globalSearch,search}=props
-    const {pages,_Logout,fR,_fetchFriendRequest,_globalSearch,search,searchFriend,setSearch,searchInput}=props
+    const {pages,_Logout,fR,_fetchFriendRequest,_globalSearch,search,searchFriend,setSearch,searchInput,profile}=props
     const [active,setActive]=React.useState([true,false,false,false,false])
     // const [searchInput,setSearch]=useState(false)
     const activeClass=active.slice()
@@ -106,7 +107,7 @@ const navigateSearch=()=>{
                 <div className="nav-item-box">
                   <Dropdown
                   renderTitle={()=>{
-                    return(<Avatar size="md" className="avatar"  circle>HB</Avatar>)
+                    return(<Avatar size="md" className="avatar" circle  src={`${API.BASE_URI}${profile!=null&&profile.profile_photo}`} />)
                   }}
                   >
                     <Dropdown.Item onClick={()=>history.push('/profile')}>
@@ -114,6 +115,9 @@ const navigateSearch=()=>{
                     </Dropdown.Item>
                     <Dropdown.Item onClick={()=>history.push('/settings')}>
                       <Icon icon="setting" /> Settings
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Icon icon="logout" /> Sign Out
                     </Dropdown.Item>
                   </Dropdown>
                    
@@ -133,7 +137,8 @@ const mapStateToProps=(state)=>{
   return{
      isAuthenticated:state.AuthReducer.isAuthenticated,
      fR:state.FriendRequestReducer.data,
-     search:state.SearchReducer.data
+     search:state.SearchReducer.data,
+     profile:state.ProfileReducer.data
   }
 }
 
