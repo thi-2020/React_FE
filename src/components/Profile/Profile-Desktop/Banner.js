@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Info from "./Info"
 import {images} from "../../../constant"
 import {Avatar,Modal,Button,Uploader,Icon} from "rsuite"
@@ -11,7 +11,7 @@ function Banner(props) {
     const [cover,setCover]=useState(false)
     const [fileInfo,setFile]=useState(null)
     const [fileObject,setFileObject]=useState(null)
-    const {loading,_changeProfile,profile}=props
+    const {loading,_changeProfile,profile,photo}=props
     const previewFile=(file,callback)=>{
         const reader= new FileReader()
         reader.onloadend=()=>{
@@ -23,10 +23,18 @@ function Banner(props) {
 
     }
 
+    useEffect(()=>{
+        if(photo){
+            setCover(false);
+            setShow(false)
+            setFileObject(null)
+        }
+    },photo)
+
     return (
         <div className="banner-desktop">
                 <div className="banner-photo-box">
-                <img src={photos.profileBanner} />
+                <img src={`${API.BASE_URI}${profile!=null&&profile.cover_photo}`}  />
                 <div className="coverBorder"></div>
                 </div>
                 <div className="avatar-box">
@@ -61,8 +69,8 @@ function Banner(props) {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button appearance="subtle" onClick={()=>setShow(false)} >Cancel</Button>
-                        <Button appearance="ghost" color="red" loading={loading} >Delete Photo</Button>
-                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject)}  loading={loading} >Upload</Button>
+                        <Button appearance="ghost" color="red" >Delete Photo</Button>
+                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject,1)}  loading={loading} >Upload</Button>
                     </Modal.Footer>
                 </Modal>
 
@@ -88,8 +96,8 @@ function Banner(props) {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button appearance="subtle" onClick={()=>setCover(false)} >Cancel</Button>
-                        <Button appearance="ghost" color="red" loading={loading} >Delete Photo</Button>
-                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject)}  loading={loading} >Upload</Button>
+                        <Button appearance="ghost" color="red">Delete Photo</Button>
+                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject,2)}  loading={loading} >Upload</Button>
                     </Modal.Footer>
                 </Modal>
         </div>
@@ -101,13 +109,14 @@ function Banner(props) {
 
 const mapStateToProps=(state)=>{
     return{
-        loading:state.ProfileReducer.loading
+        loading:state.ProfileReducer.loading,
+        photo:state.ProfileReducer.photo
     }
 }
 
 const mapDisptachToProps=dispatch=>{
     return{
-        _changeProfile:(data)=>dispatch(action.changeProfile(data))
+        _changeProfile:(data,option)=>dispatch(action.changeProfile(data,option))
     }
 }
 

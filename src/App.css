@@ -535,6 +535,7 @@ p {
 
 .App .profile-card-box .profile-info h5 {
   font-weight: 500 !important;
+  text-transform: capitalize !important;
 }
 
 .App .profile-card-box .profile-info h6 {

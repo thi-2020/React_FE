@@ -3,7 +3,8 @@ import {RadioGroup,Radio} from "rsuite"
 import { connect } from 'react-redux'
 import * as action from "../../../redux/actions/connection"
 import Followers from "./Followers"
-import Item from "./Item"
+import Following from "./Following"
+import Connections from "./Connections"
 export const Connection = (props) => {
     const {_connection,profile}=props
     const [option,setOption]=useState(1)
@@ -29,6 +30,8 @@ export const Connection = (props) => {
 
             <div>
                {option==1&&<Followers/>}
+               {option==2&&<Following/>}
+               {option==3&&<Connections/>}
             </div>
             </div>
            

@@ -30,7 +30,8 @@ export const loaderFail=()=>({
 })
 
 
-export const changeProfile=(data)=>({
+export const changeProfile=(data,option)=>({
     type:actionTypes.CHANGE_PROFILE,
-    payload:data
+    payload:{data,option}
 })
+

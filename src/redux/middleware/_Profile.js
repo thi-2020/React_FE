@@ -43,12 +43,19 @@ export const fetchProfileFail=({dispatch})=>next=>action=>{
 export const changeProfilePhoto=({dispatch})=>next=>action=>{
     next(action)
     if(action.type===actionTypes.CHANGE_PROFILE){
-        let data=action.payload
+        let data=action.payload.data;
+        let option=action.payload.option
         const formData=new FormData()
-        formData.append('profile_photo',data)
         let onSuccess=actionTypes.CHANGE_PROFILE_SUCCESS;
         let onError=actionTypes.CHANGE_PROFILE_FAIL
-        dispatch(authApi('POST',API.CHANGE_PROFILE,null,onSuccess,onError,formData,null))
+        dispatch({type:actionTypes.RESET_CHANGE_PROFILE_SUCCESS})
+        if(option==1){
+            formData.append('profile_photo',data)
+            dispatch(authApi('POST',API.CHANGE_PROFILE,null,onSuccess,onError,formData,null))
+        }else{
+            formData.append('cover_photo',data)
+            dispatch(authApi('POST',API.CHANGE_COVER,null,onSuccess,onError,formData,null))
+        }
         dispatch(loaderStart())
     }
 }
@@ -59,7 +66,13 @@ export const changeProfileSuccess=({dispatch})=>next=>action=>{
         let data=action.payload;
         console.log("Profile Photo Uploaded Successfuly! ",data)
         Alert.success('Profile Photo Updated Successfuly! ',2000)
-        dispatch({type:actionTypes.FETCH_PROFILE})
+        if(data){
+            dispatch({type:actionTypes.UPDATE_CHANGE_PROFILE_SUCCESS,payload:{data}})
+            dispatch({type:actionTypes.FETCH_PROFILE})
+        }
+        dispatch(loaderFail())
+
+       
     }
 }
 

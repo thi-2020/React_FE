@@ -24,3 +24,4 @@ export const FOLLOWING_LIST=            "/accounts/follow/follwing_list/"
 export const CONNECTIONS=               "/accounts/connection/others_all_connections/"
 
 export const CHANGE_PROFILE=            "/accounts/profile/update_profile_photo/"
+export const CHANGE_COVER=              "/accounts/profile/update_cover_photo/"
