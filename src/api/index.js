@@ -25,3 +25,9 @@ export const CONNECTIONS=               "/accounts/connection/others_all_connect
 
 export const CHANGE_PROFILE=            "/accounts/profile/update_profile_photo/"
 export const CHANGE_COVER=              "/accounts/profile/update_cover_photo/"
+
+export const DELETE_PROFILE=            "/accounts/profile/delete_profile_photo/"
+export const DELETE_COVER=              "/accounts/profile/delete_cover_photo/"
+
+
+export const LIKE_POST=                 "/posts/likes/like_a_post/"

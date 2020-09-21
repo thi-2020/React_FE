@@ -12,6 +12,7 @@ import {createPostMdl} from "./_CreatePost"
 import {selfTimelineMdl} from "./_SelfTimeline"
 import {settingsMdl} from "./_Settings"
 import {connectionMdl} from "./_Connection"
+import {postMdl} from "./_Post"
 export const Middleware=[
     authApi,
     postApi,
@@ -26,5 +27,6 @@ export const Middleware=[
     ...createPostMdl,
     ...selfTimelineMdl,
     ...settingsMdl,
-    ...connectionMdl
+    ...connectionMdl,
+    ...postMdl
 ]

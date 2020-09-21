@@ -3,9 +3,19 @@ import Item from "./Item"
 import {connect} from "react-redux"
 import {Button} from "rsuite"
 import * as action from "../../../../redux/actions/selfTimeline"
+import * as post from "../../../../redux/actions/post"
 import IntersectionWrapper from "../../../HOC/intersectionWrapper"
 function SelfTimeline(props) {
-    const {_fetchTimeline,data,_intersection,loading,setElement,isIntersecting}=props
+    const {
+        _fetchTimeline,
+        data,
+        _intersection,
+        loading,
+        setElement,
+        isIntersecting,
+        _likePost,
+        postLoading
+    }=props
     const [timeline,setTimeline]=useState(null)
 
 
@@ -34,15 +44,20 @@ function SelfTimeline(props) {
             <Item  
             thumbnail={item.thumbnail}
             name={item.full_name}
-            like_id={item.like_id}
-            comment_id={item.comment_id}
-            is_edited={item.is_edited}
+            // like_id={item.like_id}
+            // comment_id={item.comment_id}
             is_comment_disabled={item.is_comment_disabled}
             likes={item.no_of_likes}
             comments={item.no_of_comments}
             content={item.content}
             image={item.image}
             timestamp={item.timestamp}
+            postId={item.post_id}
+            postType={item.post_type}
+            isLiked={item.is_liked}
+            isEdited={item.is_edited}
+            likePost={_likePost}
+            loading={postLoading}
             key={index}
             />
             )})}
@@ -61,14 +76,17 @@ function SelfTimeline(props) {
 const mapStateToProps=(state)=>{
     return {
         data:state.SelfTimelineReducer.data,
-        loading:state.SelfTimelineReducer.loading
+        loading:state.SelfTimelineReducer.loading,
+        postLoading:state.PostReducer.loading
     }
 }
 
 const mapDispatchToProps=(dispatch)=>{
     return {
         _fetchTimeline:()=>dispatch(action.fetchSelfTimeline()),
-        _intersection:(data)=>dispatch(action.selfTimelineIntersection(data))
+        _intersection:(data)=>dispatch(action.selfTimelineIntersection(data)),
+        _likePost:(data)=>dispatch(post.handleLike(data))
+
     }
 }
 

@@ -11,7 +11,8 @@ function Banner(props) {
     const [cover,setCover]=useState(false)
     const [fileInfo,setFile]=useState(null)
     const [fileObject,setFileObject]=useState(null)
-    const {loading,_changeProfile,profile,photo}=props
+    const [load,setLoad]=useState(0)
+    const {loading,_changeProfile,profile,photo,_deletePhoto}=props
     const previewFile=(file,callback)=>{
         const reader= new FileReader()
         reader.onloadend=()=>{
@@ -30,6 +31,17 @@ function Banner(props) {
             setFileObject(null)
         }
     },photo)
+
+
+    const deletePhoto=(option,load)=>{
+        _deletePhoto(option)
+        setLoad(load)
+    }
+
+    const changeProfile=(option,load)=>{
+        _changeProfile(fileObject,option)
+        setLoad(load)
+    }
 
     return (
         <div className="banner-desktop">
@@ -69,8 +81,8 @@ function Banner(props) {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button appearance="subtle" onClick={()=>setShow(false)} >Cancel</Button>
-                        <Button appearance="ghost" color="red" >Delete Photo</Button>
-                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject,1)}  loading={loading} >Upload</Button>
+                        <Button appearance="ghost" color="red" onClick={()=>deletePhoto(1,1)} loading={loading && load==1} >Delete Photo</Button>
+                        <Button appearance="primary" onClick={()=>changeProfile(1,2)}  loading={loading && load==2} >Upload</Button>
                     </Modal.Footer>
                 </Modal>
 
@@ -96,8 +108,8 @@ function Banner(props) {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button appearance="subtle" onClick={()=>setCover(false)} >Cancel</Button>
-                        <Button appearance="ghost" color="red">Delete Photo</Button>
-                        <Button appearance="primary" onClick={()=>_changeProfile(fileObject,2)}  loading={loading} >Upload</Button>
+                        <Button appearance="ghost" color="red" onClick={()=>deletePhoto(2,1)} loading={loading && load==1} >Delete Photo</Button>
+                        <Button appearance="primary" onClick={()=>changeProfile(2,2)}  loading={loading && load==2} >Upload</Button>
                     </Modal.Footer>
                 </Modal>
         </div>
@@ -116,7 +128,8 @@ const mapStateToProps=(state)=>{
 
 const mapDisptachToProps=dispatch=>{
     return{
-        _changeProfile:(data,option)=>dispatch(action.changeProfile(data,option))
+        _changeProfile:(data,option)=>dispatch(action.changeProfile(data,option)),
+        _deletePhoto:(data)=>dispatch(action.deletePhoto(data))
     }
 }
 

@@ -13,6 +13,7 @@ import CreatePostReducer from "./_createPostReducer"
 import SelfTimelineReducer from "./_selfTimelineReducer"
 import SettingsReducer from "./settingsReducer"
 import ConnectionReducer from "./connectionReducer"
+import PostReducer from "./postReducer"
 import {reducer as formReducer} from "redux-form"
 
 const persistConfig={
@@ -44,6 +45,7 @@ const Reducers = combineReducers({
     SelfTimelineReducer,
     SettingsReducer,
     ConnectionReducer,
+    PostReducer,
     form:formReducer
 })
 

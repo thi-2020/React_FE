@@ -4,6 +4,7 @@ import * as API from "../../api"
 import {updateProfileSuccess,updateProfileFail,loaderStart,loaderFail} from "../actions/profile"
 import history from "../../helpers/History"
 import {Alert} from 'rsuite'
+import { IOSView } from "react-device-detect"
 
 
 export const fetchProfile=({dispatch})=>next=>action=>{
@@ -76,10 +77,56 @@ export const changeProfileSuccess=({dispatch})=>next=>action=>{
     }
 }
 
+
+export const deleteProfilePhoto=({dispatch})=>next=>action=>{
+    next(action)
+    if(action.type===actionTypes.DELETE_PROFILE_PHOTO){
+        let data=action.payload.data
+        let onSuccess=actionTypes.DELETE_PROFILE_PHOTO_SUCCESS;
+        let onError=actionTypes.DELETE_PROFILE_PHOTO_FAIL;
+        if(data==1){
+            dispatch(authApi('GET',API.DELETE_PROFILE,null,onSuccess,onError,null,null))
+        }
+        if(data==2){
+            dispatch(authApi('GET',API.DELETE_COVER,null,onSuccess,onError,null,null))
+        }
+        dispatch(loaderStart())
+    }
+}
+
+
+export const deleteProfilePhotoSuccess=({dispatch})=>next=>action=>{
+    next(action)
+    if(action.type===actionTypes.DELETE_PROFILE_PHOTO_SUCCESS){
+        let data=action.payload;
+        
+        if(data){
+            dispatch({type:actionTypes.UPDATE_CHANGE_PROFILE_SUCCESS,payload:{data}})
+            dispatch({type:actionTypes.FETCH_PROFILE})
+
+        }
+        dispatch(loaderFail())
+
+    }
+}
+
+export const deleteProfilePhotoFail=({dispatch})=>next=>action=>{
+    next(action)
+    if(action.type===actionTypes.DELETE_PROFILE_PHOTO_FAIL){
+        let data=action.payload;
+        if(data){
+        }
+        dispatch(loaderFail())
+    }
+}
+
 export const profileMdl=[
     fetchProfile,
     fetchProfileSuccess,
     fetchProfileFail,
     changeProfilePhoto,
-    changeProfileSuccess
+    changeProfileSuccess,
+    deleteProfilePhoto,
+    deleteProfilePhotoSuccess,
+    deleteProfilePhotoFail
 ]

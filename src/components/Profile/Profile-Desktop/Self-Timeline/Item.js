@@ -6,6 +6,17 @@ import {AiOutlineLike,FiMoreHorizontal} from "react-icons/all"
 import * as API from "../../../../api"
 const {photos}=images
 export default function Item(props) {
+    const {likePost,loading}=props
+
+    const likepost=()=>{
+        let data={
+            post_id:props.postId,
+            post_type:props.postType
+        }
+
+        likePost(data)
+    }
+
     return (
         <div className="item-box">
             <div className="top-box" >
@@ -32,8 +43,8 @@ export default function Item(props) {
             </div>
             <div className="action-container">
                 <div>
-                    <Button appearance="subtle" block >
-                        <Icon icon="thumbs-o-up" /> Like
+                    <Button appearance="subtle" block onClick={likepost} loading={loading} >
+                        <Icon icon="thumbs-o-up" /> {props.isLiked?"Unlike":"Like"}
                     </Button>
                 </div>
                 <div>

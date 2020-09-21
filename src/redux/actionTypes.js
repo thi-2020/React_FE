@@ -193,3 +193,17 @@ export const CHANGE_PROFILE_FAIL=                   "CHANGE_PROFILE_FAIL"
 export const UPDATE_CHANGE_PROFILE_SUCCESS=         "UPDATE_CHANGE_PROFILE_SUCCESS"
 export const RESET_CHANGE_PROFILE_SUCCESS=         "UPDATE_CHANGE_PROFILE_SUCCESS"
 export const UPDATE_CHANGE_PROFILE_FAIL=            "UPDATE_CHANGE_PROFILE_FAIL"
+
+
+export const DELETE_PROFILE_PHOTO=                  "DELETE_PROFILE_PHOTO"
+export const DELETE_PROFILE_PHOTO_SUCCESS=          "DELETE_PROFILE_PHOTO_SUCCESS"
+export const DELETE_PROFILE_PHOTO_FAIL=          "DELETE_PROFILE_PHOTO_FAIL"
+
+
+export const LIKE_POST=                         "LIKE_POST"
+export const LIKE_POST_START=                   "LIKE_POST_START"
+export const LIKE_POST_OFF=                     "LIKE_POST_OFF"
+export const LIKE_POST_SUCCESS=                 "LIKE_POST_SUCCESS"
+export const LIKE_POST_FAIL=                 "LIKE_POST_FAIL"    
+export const UPDATE_LIKE_POST_FAIL=                 "UPDATE_LIKE_POST_FAIL"    
+export const UPDATE_LIKE_POST_SUCCESS=                 "UPDATE_LIKE_POST_SUCCESS"    

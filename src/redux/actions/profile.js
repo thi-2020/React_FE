@@ -35,3 +35,8 @@ export const changeProfile=(data,option)=>({
     payload:{data,option}
 })
 
+
+export const deletePhoto=(data)=>({
+    type:actionTypes.DELETE_PROFILE_PHOTO,
+    payload:{data}
+})

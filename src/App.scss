@@ -943,6 +943,7 @@ background-color: $grey-background;
 
     .stats-box{
         display: grid;
+        cursor: pointer;
         grid-template-columns: repeat(2,1fr);
         column-gap: 15px;
         grid-auto-rows: 120px;
