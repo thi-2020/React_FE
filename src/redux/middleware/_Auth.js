@@ -6,8 +6,8 @@ import {showLoader,hideLoader} from "../actions/Loader"
 import {authTokenInsert,authFail,authTokenRemove,removeRegister,authLoaderStart,authLoaderOff} from "../actions/auth"
 import history from "../../helpers/History"
 import {Alert} from 'rsuite'
-
-
+import jwt_decode from "jwt-decode"
+import {store} from "../store/index"
 
 export const authStart=({dispatch})=>next=>action=>{
     next(action)
@@ -25,6 +25,7 @@ export const isAuthSuccess=({dispatch})=>next=>action=>{
         let data= action.payload
         if(data!=null && data.access){
             dispatch(authTokenInsert(data.access))
+            console.log("JWT Decode: ",jwt_decode(data.access))
             dispatch(authApi('GET',API.PROFILE,null,actionTypes.FETCH_PROFILE_SUCCESS,actionTypes.FETCH_PROFILE_FAIL,null,data.access))
             history.push('/feed')
         }
@@ -83,22 +84,28 @@ export const checkTokenVailid=({dispatch})=>next=>action=>{
     next(action)
 
     if(action.type===actionTypes.CHECK_TOKEN_VAILID){
-        let token=action.payload.token
-        let tokenTime=new Date(action.payload.tokenTime)
-        let currentTime=new Date()
-        console.log("Token Time: ",tokenTime)
-        console.log("Current Time: ",currentTime)
-        if(!token){
-            dispatch(authTokenRemove())
-            dispatch(removeRegister())
-        }
-        else{
-            if(tokenTime<=currentTime){
+        const state=store.getState();
+        const token= state.AuthReducer.token;
+        if(token){
+            let currentTime = Date.now()/1000;
+            const decoded=jwt_decode(token)
+            console.log("Checking Authorization....")
+            if(decoded.exp<currentTime){
+                console.log("Loggin You out. Please login again")
                 dispatch(authTokenRemove())
                 dispatch(removeRegister())
+                history.push('/login')
+            }else{
+                console.log("Authorized....")
+    
             }
         }
-
+        else{
+            dispatch(authTokenRemove())
+            dispatch(removeRegister())
+            history.push('/login')
+        }
+      
     }
 }
 

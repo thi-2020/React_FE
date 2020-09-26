@@ -201,9 +201,30 @@ export const DELETE_PROFILE_PHOTO_FAIL=          "DELETE_PROFILE_PHOTO_FAIL"
 
 
 export const LIKE_POST=                         "LIKE_POST"
-export const LIKE_POST_START=                   "LIKE_POST_START"
-export const LIKE_POST_OFF=                     "LIKE_POST_OFF"
+export const POST_LOADER_START=                   "LIKE_POST_START"
+export const POST_LOADER_OFF=                     "LIKE_POST_OFF"
 export const LIKE_POST_SUCCESS=                 "LIKE_POST_SUCCESS"
 export const LIKE_POST_FAIL=                 "LIKE_POST_FAIL"    
 export const UPDATE_LIKE_POST_FAIL=                 "UPDATE_LIKE_POST_FAIL"    
 export const UPDATE_LIKE_POST_SUCCESS=                 "UPDATE_LIKE_POST_SUCCESS"    
+
+
+export const UNLIKE_POST=                       "UNLIKE_POST"
+export const UNLIKE_POST_SUCCESS=               "UNLIKE_POST_SUCCESS"
+export const UNLIKE_POST_FAIL=                  "UNLIKE_POST_FAIL"
+export const UPDATE_UNLIKE_POST_SUCCESS=        "UPDATE_UNLIKE_POST_SUCCESS"
+export const UPDATE_UNLIKE_POST_FAIL=           "UPDATE_UNLIKE_POST_FAIL"    
+
+
+export const CREATE_COMMENT=                    "CREATE_COMMENT"
+export const CREATE_COMMENT_SUCCESS=            "CREATE_COMMENT_SUCCESS"
+export const CREATE_COMMENT_FAIL=               "CREATE_COMMENT_FAIL"
+export const UPDATE_CREATE_COMMENT_SUCCESS=             "UPDATE_CREATE_COMMENT_SUCCESS"
+export const UPDATE_CREATE_COMMENT_FAIL=             "UPDATE_CREATE_COMMENT_FAIL"
+
+
+export const FETCH_COMMENTS=                    "FETCH_COMMENTS"
+export const FETCH_COMMENTS_SUCCESS=            "FETCH_COMMENTS_SUCCESS"
+export const FETCH_COMMENTS_FAIL=               "FETCH_COMMENTS_FAIL"      
+export const UPDATE_FETCH_COMMENTS_FAIL=               "UPDATE_FETCH_COMMENTS_FAIL"      
+export const UPDATE_FETCH_COMMENTS_SUCCESS=               "UPDATE_FETCH_COMMENTS_SUCCESS"      

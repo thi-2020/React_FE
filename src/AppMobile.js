@@ -9,30 +9,51 @@ import { Header, FooterTab, HeaderTab } from "./components/index"
 import history from "./helpers/History"
 import { connect } from "react-redux"
 import { _AuthenticatedPages, _PublicPages } from "./Routes/pages"
+import * as action from "./redux/actions/auth"
 
 
 
 function AppMobile(props) {
-    const { isAuthenticated } = props
+  const { isAuthenticated ,_checkValidAuth} = props
 
+  useEffect(()=>{
+    _checkValidAuth()
+  },[])
+  
+  
     return (
         <div className="App-Mobile">
            {isAuthenticated&&<HeaderTab />}
             <Suspense>
                 <Router history={history} >
-                    <Switch>
-                        {!isAuthenticated && _PublicPages.map((page, index) => {
-                            return (
-                                <Route path={page.pageLink} exact render={({ match }) => <page.view />} key={index} />
-                            )
-                        })}
-                        {_AuthenticatedPages.map((page, index) => {
-                            return (
-                                <PrivateRoute path={page.pageLink} exact component={page.view} key={index} />
-                            )
-                        })}
-                    </Switch>
-                </Router>
+          <Switch>
+            {_AuthenticatedPages.map((item,index)=>{
+              if(item.isMobile==true){
+                return(
+                  <PrivateRoute
+                  component={item.view}
+                  exact
+                  path={item.pageLink}
+                  layout={item.layout}
+                  key={index}
+                  />
+                )
+              }
+            
+            })}
+
+          {_PublicPages.map((item,index)=>{
+            return(
+                <Route
+                component={item.view}
+                exact
+                path={item.pageLink}
+                key={index}
+                />
+            )
+          })}  
+        </Switch>
+        </Router>
 
             </Suspense>
 
@@ -54,4 +75,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(AppMobile);
+const mapDispatchToProps=dispatch=>{
+  return{
+    _checkValidAuth:()=>dispatch(action.checkTokenVailid())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppMobile);

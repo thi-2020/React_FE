@@ -113,10 +113,7 @@ const navigateSearch=()=>{
                     <Dropdown.Item onClick={()=>history.push('/profile')}>
                       <Icon icon="profile" /> Profile
                     </Dropdown.Item>
-                    <Dropdown.Item onClick={()=>history.push('/settings')}>
-                      <Icon icon="setting" /> Settings
-                    </Dropdown.Item>
-                    <Dropdown.Item>
+                    <Dropdown.Item onClick={()=>_Logout()} >
                       <Icon icon="logout" /> Sign Out
                     </Dropdown.Item>
                   </Dropdown>

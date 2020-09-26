@@ -14,6 +14,9 @@ function SelfTimeline(props) {
         setElement,
         isIntersecting,
         _likePost,
+        _unlikePost,
+        _createComment,
+        _fetchComments,
         postLoading
     }=props
     const [timeline,setTimeline]=useState(null)
@@ -56,9 +59,13 @@ function SelfTimeline(props) {
             postType={item.post_type}
             isLiked={item.is_liked}
             isEdited={item.is_edited}
-            likePost={_likePost}
             loading={postLoading}
             key={index}
+//----------------------Handle Functions----------
+            likePost={_likePost}
+            unlikePost={_unlikePost}
+            createComment={_createComment}
+            fetchComments={_fetchComments}
             />
             )})}
             <div className="text-center" ref={setElement} >
@@ -85,7 +92,10 @@ const mapDispatchToProps=(dispatch)=>{
     return {
         _fetchTimeline:()=>dispatch(action.fetchSelfTimeline()),
         _intersection:(data)=>dispatch(action.selfTimelineIntersection(data)),
-        _likePost:(data)=>dispatch(post.handleLike(data))
+        _likePost:(data)=>dispatch(post.handleLike(data)),
+        _unlikePost:(data)=>dispatch(post.handleUnlike(data)),
+        _createComment:(data)=>dispatch(post.handleCreateComment(data)),
+        _fetchComments:(data)=>dispatch(post.handleFetchComments(data))
 
     }
 }

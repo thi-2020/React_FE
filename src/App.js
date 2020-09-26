@@ -10,11 +10,14 @@ import { isMobile } from "react-device-detect"
 import { connect } from "react-redux"
 import { _AuthenticatedPages, _PublicPages } from "./Routes/pages"
 import {RouteLayout,MainLayoutDesktop} from "./components/Layout"
+import * as action from "./redux/actions/auth"
 const App = (props) => {
   // let location=useLocation()
-  const { isAuthenticated } = props
+  const { isAuthenticated ,_checkValidAuth} = props
 
-
+useEffect(()=>{
+  _checkValidAuth()
+},[])
 
 
 
@@ -37,8 +40,7 @@ const App = (props) => {
                   key={index}
                   />
                 )
-              }
-            
+              }            
             })}
 
           {_PublicPages.map((item,index)=>{
@@ -67,4 +69,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps=dispatch=>{
+  return{
+    _checkValidAuth:()=>dispatch(action.checkTokenVailid())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

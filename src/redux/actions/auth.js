@@ -44,7 +44,6 @@ export const removeRegister=()=>({
     type:actionTypes.REMOVE_REGISTER_DATA
 })
 
-export const checkTokenVailid=(token,tokenTime)=>({
+export const checkTokenVailid=()=>({
     type:actionTypes.CHECK_TOKEN_VAILID,
-    payload:{token,tokenTime}
 })

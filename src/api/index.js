@@ -31,3 +31,6 @@ export const DELETE_COVER=              "/accounts/profile/delete_cover_photo/"
 
 
 export const LIKE_POST=                 "/posts/likes/like_a_post/"
+export const UNLIKE_POST=               "/posts/likes/unlike_a_post/"
+export const CREATE_COMMENT=            "/posts/comments/create_comment/"
+export const FETCH_COMMENTS=            "/posts/comments/list_of_comments_on_post/"
